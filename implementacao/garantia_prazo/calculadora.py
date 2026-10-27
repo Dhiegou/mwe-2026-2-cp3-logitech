@@ -9,7 +9,9 @@ class CalculadoraDeCredito:
         return cls()
 
     def calcular(self, tipo_cliente: str, valor_frete: Decimal, atraso: Atraso) -> Decimal:
-        if atraso.minutos > 1440:
+        if atraso.minutos > 4320:
+            percentual = Decimal("0.50")
+        elif atraso.minutos > 1440:
             percentual = Decimal("0.25")
         elif atraso.minutos > 120:
             percentual = Decimal("0.10")

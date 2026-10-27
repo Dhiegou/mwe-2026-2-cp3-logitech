@@ -17,6 +17,8 @@ class CalculadoraDeCredito:
             percentual = Decimal("0.10")
         else:
             percentual = Decimal("0.00")
+        teto = Decimal("500.00")
         if tipo_cliente == "CORPORATIVO":
             percentual = percentual * 2
-        return min(valor_frete * percentual, Decimal("500.00")).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+            teto = Decimal("2000.00")
+        return min(valor_frete * percentual, teto).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)

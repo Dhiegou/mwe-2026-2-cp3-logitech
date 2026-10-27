@@ -3,12 +3,18 @@ from decimal import ROUND_HALF_UP, Decimal
 from .atraso import Atraso
 
 
+class TipoDeClienteNaoSuportado(Exception):
+    pass
+
+
 class CalculadoraDeCredito:
     @classmethod
     def padrao(cls) -> "CalculadoraDeCredito":
         return cls()
 
     def calcular(self, tipo_cliente: str, valor_frete: Decimal, atraso: Atraso) -> Decimal:
+        if tipo_cliente not in ("VAREJO", "CORPORATIVO"):
+            raise TipoDeClienteNaoSuportado(tipo_cliente)
         if atraso.minutos > 4320:
             percentual = Decimal("0.50")
         elif atraso.minutos > 1440:

@@ -7,8 +7,8 @@ Prof. José Romualdo · Checkpoint 3 · 27/10/2026 · Atividade em dupla · Dura
 
 | Nome | RM |
 |---|---|
-| | |
-| | |
+| Dhiego Ferreira de Queiroz | 560294 |
+| Thiago Cardoso Mendes Machado | 560032 |
 
 ## Contexto
 

@@ -31,3 +31,11 @@ def test_ct04_atraso_de_exatamente_24h_continua_em_10_por_cento():
 
 def test_ct05_atraso_logo_acima_de_24h_gera_25_por_cento():
     assert credito_varejo("300.00", 24, 1) == Decimal("75.00")
+
+
+def test_ct06_atraso_de_exatamente_72h_continua_em_25_por_cento():
+    assert credito_varejo("300.00", 72, 0) == Decimal("75.00")
+
+
+def test_ct07_atraso_logo_acima_de_72h_gera_50_por_cento():
+    assert credito_varejo("300.00", 72, 1) == Decimal("150.00")

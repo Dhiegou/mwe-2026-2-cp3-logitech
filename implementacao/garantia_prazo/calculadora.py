@@ -8,11 +8,19 @@ class TipoDeClienteNaoSuportado(Exception):
 
 
 class CalculadoraDeCredito:
+    def __init__(self, politicas=None):
+        self._politicas = dict(politicas or {})
+
     @classmethod
     def padrao(cls) -> "CalculadoraDeCredito":
         return cls()
 
+    def com_politica(self, tipo_cliente: str, politica) -> "CalculadoraDeCredito":
+        return CalculadoraDeCredito({**self._politicas, tipo_cliente: politica})
+
     def calcular(self, tipo_cliente: str, valor_frete: Decimal, atraso: Atraso) -> Decimal:
+        if tipo_cliente in self._politicas:
+            return self._politicas[tipo_cliente].calcular(valor_frete, atraso)
         if tipo_cliente == "CORTESIA":
             return Decimal("0.00")
         if tipo_cliente not in ("VAREJO", "CORPORATIVO"):

@@ -54,7 +54,7 @@ flowchart LR
     EMA -->|"CF: API atual"| NOT
     WPP -->|"ACL: adaptador"| NOT
     RAS -->|"PL: PosicaoAtualizada"| ACO
-    PED -->|"PL: AusenciaRegistrada, EntregaConfirmada"| ACO
+    PED -->|"PL: situação do pedido"| ACO
     GAR -->|"PL: AtrasoApurado"| ACO
     FAT -->|"PL: NotaDeCreditoEmitida"| ACO
 ```

@@ -17,4 +17,4 @@ class CalculadoraDeCredito:
             percentual = Decimal("0.10")
         else:
             percentual = Decimal("0.00")
-        return (valor_frete * percentual).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+        return min(valor_frete * percentual, Decimal("500.00")).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)

@@ -13,6 +13,8 @@ class CalculadoraDeCredito:
         return cls()
 
     def calcular(self, tipo_cliente: str, valor_frete: Decimal, atraso: Atraso) -> Decimal:
+        if tipo_cliente == "CORTESIA":
+            return Decimal("0.00")
         if tipo_cliente not in ("VAREJO", "CORPORATIVO"):
             raise TipoDeClienteNaoSuportado(tipo_cliente)
         if atraso.minutos > 4320:

@@ -39,3 +39,11 @@ def test_ct06_atraso_de_exatamente_72h_continua_em_25_por_cento():
 
 def test_ct07_atraso_logo_acima_de_72h_gera_50_por_cento():
     assert credito_varejo("300.00", 72, 1) == Decimal("150.00")
+
+
+def test_ct08_credito_igual_ao_teto_de_500_e_mantido():
+    assert credito_varejo("1000.00", 72, 1) == Decimal("500.00")
+
+
+def test_ct09_credito_um_centavo_acima_do_teto_e_limitado_a_500():
+    assert credito_varejo("1000.02", 72, 1) == Decimal("500.00")

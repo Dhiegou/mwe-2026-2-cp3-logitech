@@ -10,6 +10,10 @@ Prof. José Romualdo · Checkpoint 3 · 27/10/2026 · Atividade em dupla · Dura
 | Dhiego Ferreira de Queiroz | 560294 |
 | Thiago Cardoso Mendes Machado | 560032 |
 
+> Autoria dos commits: os commits feitos no computador do laboratório aparecem com o autor
+> "Laboratório FIAP", que é a configuração padrão do git dessa máquina. A dupla autora é a da
+> tabela acima. Os commits seguintes usam o nome da dupla.
+
 ## Contexto
 
 A LogiTech vai lançar a **Garantia de Prazo**: se a entrega atrasar, o cliente recebe
